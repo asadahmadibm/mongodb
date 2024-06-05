@@ -16,6 +16,7 @@
       db.users.help : help get list function for use users collection
       db.users.drop  : delete collections
       db.users.find() : list documents in users
+      db.users.find().sort({age:1}).limit(10)
       db.users.find().pretty() : list json document in beauty form
       db.users.deleteOne({_id : ObjectId("66605604c4bade5bc568af83")})
       db.users.deleteMany({age :35})
