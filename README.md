@@ -22,6 +22,8 @@
       db.users.find().pretty() : list json document in beauty form
       db.users.deleteOne({_id : ObjectId("66605604c4bade5bc568af83")})
       db.users.deleteMany({age :35})
-        
-        
+
+        aggregates : 
+                 db.getCollection("users").aggregate([{$match : {age :{ $in : [25,25]}}},{$project : {name:1}},{$sort : {age:1}},{$limit : 4}])
       compass or studio 3t tools for mongodb
+      
