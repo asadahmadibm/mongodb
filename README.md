@@ -16,6 +16,7 @@
       db.users.help : help get list function for use users collection
       db.users.drop  : delete collections
       db.users.find() : list documents in users
+      db.users.find({$and : [{age:25}]}) : filter age =25 
       db.users.find({},{age:1}) : only output is is & age  
       db.users.find().sort({age:1}).limit(10)
       db.users.find().pretty() : list json document in beauty form
