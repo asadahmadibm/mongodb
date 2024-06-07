@@ -34,9 +34,25 @@ app.MapGet("/GetAllArticle", (IArticleRepository Repository) =>
 })
 .WithOpenApi();
 
-app.MapGet("/AddArticle", ([FromBody] Article article , IArticleRepository Repository) =>
+app.MapPost("/AddArticle", ([FromBody] Article article , IArticleRepository Repository) =>
 {
     return Repository.Post(article);
+
+
+})
+.WithOpenApi();
+
+app.MapDelete("/DeleteArticle", (string id, IArticleRepository Repository) =>
+{
+    return Repository.Delete(id);
+
+
+})
+.WithOpenApi();
+
+app.MapPut("/AddArticle", ( string Id,[FromBody] Article article, IArticleRepository Repository) =>
+{
+    return Repository.Put(Id,article);
 
 
 })
